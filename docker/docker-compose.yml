@@ -1,0 +1,17 @@
+version: "2"
+services: 
+  app:
+    image: node:latest
+    container_name: tsnode
+    working_dir: /app
+    command: "yarn dev"
+    ports: 
+      - 3333:3333
+    tty: true
+    volumes: 
+      - ../:/app
+  mongodb:
+    image: mongo:latest
+    container_name: tsnode-db
+    ports: 
+      - 27017:27017
