@@ -1,7 +1,7 @@
 version: "2"
 services: 
   app:
-    image: node:latest
+    image: node:12
     container_name: tsnode
     working_dir: /app
     command: "yarn dev"
