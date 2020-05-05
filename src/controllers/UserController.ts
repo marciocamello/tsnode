@@ -9,9 +9,38 @@ class UserController {
   }
 
   public async store (req: Request, res: Response): Promise<Response> {
-    const user = await User.create(req.body)
+    try {
+      const user = await User.create(req.body)
 
-    return res.json(user)
+      return res.json(user)
+    } catch (err) {
+      return res.status(400).json({ error: err.message })
+    }
+  }
+
+  public async update (req: Request, res: Response): Promise<Response> {
+    try {
+      await User.update({ _id: req.params.id }, req.body)
+
+      req.body.password = undefined
+
+      return res.json({
+        _id: req.params.id,
+        ...req.body
+      })
+    } catch (err) {
+      return res.status(400).json({ error: err.message })
+    }
+  }
+
+  public async delete (req: Request, res: Response): Promise<Response> {
+    try {
+      await User.remove({ _id: req.params.id })
+
+      return res.json({ message: 'User deleted with success' })
+    } catch (err) {
+      return res.status(400).json({ error: err.message })
+    }
   }
 }
 

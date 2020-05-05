@@ -11,7 +11,10 @@ export interface UserModel extends UserInterface, Document {
 }
 
 const UserSchema = new Schema({
-  email: String,
+  email: {
+    type: String,
+    unique: true
+  },
   firstName: String,
   lastName: String,
   password: String
