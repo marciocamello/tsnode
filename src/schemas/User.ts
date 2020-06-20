@@ -1,6 +1,6 @@
 import { Schema, Model, model, Document } from 'mongoose'
-import { UserInterface } from '../interfaces/User'
-import { secrets } from '../config/secrets'
+import { UserInterface } from '@interfaces/User'
+import { secrets } from '@config/secrets'
 import bcrypt from 'bcryptjs'
 import * as jwt from 'jsonwebtoken'
 

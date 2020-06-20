@@ -1,5 +1,5 @@
 import { Response, Request } from 'express'
-import { User } from '../schemas/User'
+import { User } from '@schemas/User'
 import bcrypt from 'bcryptjs'
 
 class AuthController {

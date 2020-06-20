@@ -1,8 +1,9 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
   env: {
-    es6: true,
+    es2020: true,
     node: true,
+    jest: true
   },
   plugins: ["@typescript-eslint"],
   extends: [
@@ -15,8 +16,10 @@ module.exports = {
     SharedArrayBuffer: "readonly",
   },
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 11,
     sourceType: "module",
   },
-  rules: {},
+  rules: {
+    "@typescript-eslint/no-var-requires": "off"
+  },
 }

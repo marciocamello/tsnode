@@ -1,8 +1,8 @@
 import { NextFunction, Response, Request } from 'express'
 import * as jwt from 'jsonwebtoken'
-import { secrets } from '../config/secrets'
-import { User } from '../schemas/User'
-import { JwtInterface } from '../interfaces/Jwt'
+import { secrets } from '@config/secrets'
+import { User } from '@schemas/User'
+import { JwtInterface } from '@interfaces/Jwt'
 
 async function jwtMiddleware (req: Request, res: Response, next: NextFunction): Promise<Response> {
   try {
